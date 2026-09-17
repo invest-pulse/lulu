@@ -1,9 +1,9 @@
 {
-  "name": "Investment Tracker — متتبع الاستثمارات",
-  "short_name": "Investment Tracker",
+  "name": "Invest Pulse — نبض الاستثمار",
+  "short_name": "Invest Pulse",
   "description": "تطبيق احترافي لتتبع استثماراتك — أسهم، كريبتو، معادن، عقارات",
-  "start_url": "/lulu-portfolio/",
-  "scope": "/lulu-portfolio/",
+  "start_url": "/lulu/",
+  "scope": "/lulu/",
   "display": "standalone",
   "orientation": "portrait",
   "dir": "rtl",
