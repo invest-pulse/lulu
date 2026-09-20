@@ -2121,9 +2121,8 @@ function applyAuth(mode){
   goHome();
 }
 
-// logout button (pill)
-document.querySelector('.pill').style.cursor = 'pointer';
-document.querySelector('.pill').addEventListener('click', async ()=>{
+// زر تسجيل الخروج (أعلى الصفحة)
+document.getElementById('logoutBtn').addEventListener('click', async ()=>{
   const sess = currentSession();
   if(sess && sess.token) await saveCloudData(sess.token);
   localStorage.removeItem('lulu_session');
