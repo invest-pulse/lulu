@@ -822,6 +822,7 @@ document.querySelectorAll('.mini-links a').forEach(a=>{
 document.getElementById('backBtn').addEventListener('click', goHome);
 
 // ---- Portfolio ----
+let currentRange = 'all';
 function refreshPortfolioTotals(){
   const cryptoHolds = getCryptoHoldings();
   const cryptoVal = getCryptoValueEur();
@@ -1504,7 +1505,6 @@ renderEtfs();
 document.getElementById('footer').textContent = 'Invest Pulse · أسعار حية + عملات + أخبار + اكتتاب · v4.0 · EUR/USD '+DATA.eurusd;
 
 // ---- Performance chart ----
-let currentRange = 'all';
 let currentChartData = {labels: [], deposited: [], invested: [], current_value: 0};
 function attachChartHover(){
   const wrap = document.getElementById('chartWrap');
