@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://invest-pulse.github.io/lulu/sitemap.xml
