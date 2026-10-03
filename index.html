@@ -1196,6 +1196,21 @@ document.getElementById('saveAsset').addEventListener('click', ()=>{
   renderHolds(document.querySelector('.tab.active')?.dataset.c || 'الكل');
 });
 
+// ملء اسم الأصل تلقائياً بمجرد كتابة الرمز
+function autofillName(){
+  const t = (document.getElementById('fTicker').value||'').trim().toUpperCase();
+  if(!t){ return; }
+  const src = (DATA.holdings||[]).concat(DATA.us_stocks||[], DATA.etfs||[], DATA.saudi_stocks||[], DATA.saudi_funds||[]);
+  const m = src.find(x=>(x.ticker||'').toUpperCase()===t);
+  if(m && m.name){
+    document.getElementById('fName').value = m.name;
+    const sel = document.getElementById('fCat');
+    const cat = m.cat || m.sector;
+    if(cat && [...sel.options].some(o=>o.value===cat)) sel.value = cat;
+  }
+}
+document.getElementById('fTicker').addEventListener('input', autofillName);
+
 // ---- CSV import / export ----
 function parseCSV(text){
   const rows = []; let row = [], cell = '', inQ = false;
